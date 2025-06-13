@@ -8,32 +8,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
-      uses: actions/checkout@v4.2.2
+     - name: checkout
+       uses: actions/checkout@v4.2.2
 
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: "9.0.x"
+     - name: Setup .NET Core SDK
+       uses: actions/setup-dotnet@v4
+       with:
+         dotnet-version: "9.0.x"
 
-    - name: Instalar dependencias
-      run: dotnet restore
+     - name: Instalar dependencias
+       run: dotnet restore
 
-    - name: Compilar
-      run: dotnet build --no-restore
+     - name: Compilar
+       run: dotnet build --no-restore
 
   crear_pdf:
     name: Build PDF
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: baileyjm02/markdown-to-pdf@v1
-      with:
-        input_dir: docs
-        output_dir: pdfs
-        build_html: true
-    - name: Upload
-    - uses: actions/upload-artifact@v4
-      with:
-        name: docs
-        path: pdfs
+     - uses: actions/checkout@v4
+     - uses: baileyjm02/markdown-to-pdf@v1
+       with:
+         input_dir: docs
+         output_dir: pdfs
+         build_html: true
+     - name: Upload
+     - uses: actions/upload-artifact@v4
+       with:
+         name: docs
+         path: pdfs
+
