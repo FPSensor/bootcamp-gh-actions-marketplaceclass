@@ -17,7 +17,7 @@ The time we greeted you.
 ## Example usage
 
 ```yaml
-uses: FPSensor/hello-world-javascript-action@v1
+uses: FPSensor/hello-world-javascript-action@v1.0.3
 with:
   who-to-greet: 'Mona the Octocat'
 ```
